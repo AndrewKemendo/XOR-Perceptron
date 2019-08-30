@@ -1,6 +1,7 @@
 import numpy as np
 import timeit
 
+#Start runtime timer
 start = timeit.default_timer()
 
 #activation function
@@ -147,9 +148,11 @@ trained_parameters = model(X, Y, n_x, n_h, n_y, num_of_iters, learning_rate)
 X_test = np.array([[1], [1]])
 y_predict = predict(X_test, trained_parameters)
 
+#Stop runtime timer
 stop = timeit.default_timer()
 
 print('Neural Network prediction for example ({:d}, {:d}) is {:d}'.format(
     X_test[0][0], X_test[1][0], y_predict))
 
+#Print runtime
 print('Time sigmoid: ', stop - start)
